@@ -29,8 +29,8 @@ app.use('/blood', bloodRoutes)
 app.use('/admitP', admitPRoutes)
 app.use('/user', userRoutes)
 //create port
-let port = 8080
-//assign port no
+const port = process.env.PORT || 8080;
+// assign port no
 app.listen(port, () => {
-    console.log('Server listening port no:- ', port)
-})
+    console.log('Server listening on port:', port);
+});
