@@ -41,10 +41,21 @@ const insert_user = async (req, res) => {
 
         // If user does not exist, create a new user
         const user = new User({
+            name : req.body.name,
             username: req.body.username,
-            password: req.body.password,
             email: req.body.email,
+            phoneNumber: req.body.phoneNumber,
+            age: req.body.age,
+            password: req.body.password,
+            recheckPassword: req.body.recheckPassword
         });
+        // name : String,
+        // username : String,
+        // email : String,
+        // phoneNumber : String,
+        // age : String,
+        // password : String,
+        // recheckPassword : String
 
         // Save the new user
         const savedUser = await user.save();
@@ -59,9 +70,13 @@ const insert_user = async (req, res) => {
 const update_user = async (req, res) => {
     let username = req.body.username
     const user = {
+        name : req.body.name,
         username: req.body.username,
-        password: req.body.password,
         email: req.body.email,
+        phoneNumber: req.body.phoneNumber,
+        age: req.body.age,
+        password: req.body.password,
+        recheckPassword: req.body.recheckPassword
     }
     try {
         const updateUser = await User.updateOne(

@@ -7,6 +7,7 @@ const opdRoutes = require('./Routes/registerForOpd_routes')
 const bloodRoutes = require('./Routes/bloodUnit_routes')
 const admitPRoutes = require('./Routes/admitPatient_routes')
 const userRoutes = require('./Routes/user_routes')
+const adminRoutes = require('./Routes/admins_routes')
 
 //import url
 let url = require('./url')
@@ -28,6 +29,8 @@ app.use('/opd',opdRoutes)
 app.use('/blood', bloodRoutes)
 app.use('/admitP', admitPRoutes)
 app.use('/user', userRoutes)
+app.use('/admin', adminRoutes)
+
 //create port
 const port = process.env.PORT || 8080;
 // assign port no
